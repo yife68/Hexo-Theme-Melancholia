@@ -1,0 +1,60 @@
+# 头部 head 配置
+# --------------------------------------
+
+index:
+  url: true
+  # 是否开启获取页面的url链接显示
+  icon:
+    favicon: https://meuicat.com/media/favicon.ico
+    seventy_eight: https://meuicat.com/media/favicon-32x32.png
+    # 用于苹果设备的图标 78x78
+    one_hundred_and_eighty: https://meuicat.com/media/android-chrome-192x192.png
+    # 用于苹果设备的图标 180x180
+  twitter:
+  # 分享平台获取参数
+    enable: true
+    image: https://s1.ax1x.com/2023/04/20/p9kzdMQ.png
+    # 分享至其他平台时显示的图片摘要
+  https: true
+  # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
+
+
+# 网站站长工具
+# --------------------------------------
+
+Website_Tools:
+  verify:
+  # 网站站长验证
+    enable: false
+    baidu:
+    # 百度搜索资源平台
+    # https://ziyuan.baidu.com/
+  statistics:
+  # 网站统计
+    enable: false
+    five_one_la:
+    # 51LA统计
+    # https://v6.51.la/
+    baidu:
+    # 百度站长统计
+    # https://tongji.baidu.com/
+  monitor:
+  # 网站监控
+    enable: false
+    perf:
+
+
+# 顶部菜单栏
+# --------------------------------------
+
+nav:
+  title: "Melancholia"
+  # 菜单栏右上角名称
+  menu:
+  # 导航栏菜单，可自行增减.
+    主站: https://meuicat.com/
+    首页: /
+    分类: /categories/
+    关于: /about/
+  dark: true
+  # 暗黑模式

@@ -1,0 +1,11 @@
+<% if (theme.Website_Tools.statistics.enable) { %><% if (theme.Website_Tools.statistics.five_one_la) { %><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"<%= theme.Website_Tools.statistics.five_one_la %>",ck:"<%= theme.Website_Tools.statistics.five_one_la %>"})</script><% } %>
+<% if (theme.Website_Tools.statistics.baidu) { %><script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= theme.Website_Tools.statistics.baidu %>";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script><% } %>
+<% } %>

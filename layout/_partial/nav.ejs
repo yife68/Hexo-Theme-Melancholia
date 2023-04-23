@@ -1,0 +1,36 @@
+<div class="header_left">
+	<a href="<%- url_for() %>" class="button"><span class="header_text"><%= theme.nav.title || config.title %></span></a>
+</div>
+<div class="header_right">
+	<div class="navbar_menus">
+		<% for (var i in theme.nav.menu) { %>
+		<a href="<%- url_for(theme.nav.menu[i]) %>" class="button">
+			<div class="navbar-menu"><%-  __(i) %></div>
+		</a>
+		<% } %>
+	</div>
+	<% if (theme.nav.dark) { %><a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
+		<div>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</svg>
+		</div>
+	</a><% } %>
+	<a href="javaScript:void(0);" class="dropdown-icon button">
+		<div id="btn-dropdown">
+			<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1024 1024" width="24" height="24" fill="currentColor"
+				stroke="currentColor" stroke-width="32" stroke-linecap="round">
+				<path
+					d="M903.43 561.52H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 204.31H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24zM903.43 918.73H148.8c-13.25 0-24-10.75-24-24s10.75-24 24-24h754.63c13.25 0 24 10.75 24 24s-10.75 24-24 24z"
+					fill="currentColor"></path>
+			</svg>
+		</div>
+	</a>
+	<div class="dropdown-menus" id="dropdown-menus">
+		<% for (var i in theme.nav.menu){ %>
+		<a href="<%- url_for(theme.nav.menu[i]) %>" class="dropdown-menu button"><%-  __(i) %></a>
+		<br>
+		<% } %>
+	</div>
+</div>

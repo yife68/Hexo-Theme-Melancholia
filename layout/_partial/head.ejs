@@ -1,0 +1,38 @@
+<%
+var title = config.title
+if (page.title) {
+    title = [page.title, title].join(joinStr)
+}
+%>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <% if (theme.index.https) { %><meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"><% } %>
+
+    <meta property="og:title" content="<%= title %>">
+    <meta property="og:image" content="<%- url_for(theme.index.icon.favicon) %>">
+    <meta property="og:description" content="<%= page.excerpt || config.description %>">
+    <meta property="og:type" content="website">
+    <% if (theme.index.url) { %><meta property="og:url" content="<%- full_url_for() %>"><% } %>
+    <meta property="og:site_name" content="hexo-theme-Melancholia">
+    <meta property="og:locale" content="<%= config.language %>">
+    <% if (is_post()){ %><% if (theme.index.twitter.enable) { %><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="<%- url_for(theme.index.twitter.image) %>"><% } %><% } %>
+
+    <title><%= title %></title>
+    <meta name="author" content="<%= page.author || config.author %>">
+    <meta name="keywords" content="<%= config.keywords %>">
+    <meta name="description" content="<%= page.excerpt || config.description %>">
+
+    <link rel="icon" type="image/x-icon" href="<%- url_for(theme.index.icon.favicon) %>">
+    <link rel="apple-touch-icon" href="<%- url_for(theme.index.icon.favicon) %>">
+    <link rel="apple-touch-icon" sizes="76x76" href="<%- url_for(theme.index.icon.seventy_eight) %>">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="<%- url_for(theme.index.icon.one_hundred_and_eighty) %>">
+    <link rel="canonical" href="<%- full_url_for() %>">
+
+    <%- partial('_partial/style.ejs') %>
+    <%- partial('_partial/website/verify.ejs') %>
+    <%- partial('_partial/website/statistics.ejs') %>
+    <%- partial('_partial/website/monitor.ejs') %>
+    <% if (theme.nav.dark) { %><script src="<%- url_for('/js/main.js') %>"></script><% } %>
+</head>
