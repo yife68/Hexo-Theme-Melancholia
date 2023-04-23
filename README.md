@@ -7,7 +7,7 @@
 
 主题预览:  🤟[Melancholia](https://yi.meuicat.com/)
 
-文档: 📖 [暂无]()
+文档: 📖 [暂无](https://github.com/yife68/Hexo-Theme-Melancholia)
 
 ## 💻 安裝
 
