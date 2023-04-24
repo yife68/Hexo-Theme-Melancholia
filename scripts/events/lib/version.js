@@ -49,7 +49,7 @@ module.exports = (hexo) => {
     });
     res.on('end', () => {
       try {
-        const tag = JSON.parse(result).name;
+        const tag = JSON.parse(result).tag_name;
         if (!tag) {
           errorLog('Missing release tag');
           return;
@@ -70,17 +70,17 @@ module.exports = (hexo) => {
 
         if (isOutdated) {
           if (isZh) {
-            hexo.log.warn(`[Melancholia] 有新的版本！当前版本: V${current.join('.')}, 最新版本: V${latest.join('.')}`);
+            hexo.log.warn(`[Melancholia] 有新的版本！当前版本: v${current.join('.')}, 最新版本: v${latest.join('.')}`);
             hexo.log.warn('[Melancholia] 请查看 https://github.com/yife68/Hexo-Theme-Melancholia/issues 获取更多信息.');
           } else {
-            hexo.log.warn(`[Melancholia] There's a new version! Current version: V${current.join('.')}, latest version: V${latest.join('.')}`);
+            hexo.log.warn(`[Melancholia] There's a new version! Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
             hexo.log.warn('[Melancholia] Visit https://github.com/yife68/Hexo-Theme-Melancholia/issues for more information.');
           }
         } else {
           if (isZh) {
-            hexo.log.info(`[Melancholia] 您现在使用的是已经是最新版本，版本号: V${current.join('.')}`);
+            hexo.log.info(`[Melancholia] 您现在使用的是已经是最新版本，版本号: v${current.join('.')}`);
           } else {
-            hexo.log.info(`[Melancholia] Congratulations! You are using the latest version. Current version: V${current.join('.')}`);
+            hexo.log.info(`[Melancholia] Congratulations! You are using the latest version. Current version: v${current.join('.')}`);
           }
         }
       } catch (err) {
