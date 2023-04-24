@@ -58,8 +58,6 @@ nav:
     首页: /
     分类: /categories/
     关于: /about/
-  dark: true
-  # 暗黑模式
 
 
 # 腾讯 CoDesign - icon
@@ -72,3 +70,12 @@ icon:
   # 示例：https://cdn3.codesign.qq.com/icons/是此处的Key/latest/iconfont.css
   iconfont_family:
   iconfont:
+
+
+# 暗黑模式
+# --------------------------------------
+
+darkmode:
+  enable: true
+  display_mode: light
+  # 默认颜色 白天 / 夜晚 【 light / dark 】

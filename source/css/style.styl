@@ -17,89 +17,95 @@
 */
 
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    height: 54px;
-    padding: 0 1.25rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    border-bottom: 1px solid var(--icat-style-border-always);
-    background-color: var(--icat-nav-background-color);
-}
-header .header_left, header .header_right {
-    display: flex;
-    align-items: center;
-    font-family: rubik,sans-serif,Varela Round;
-}
-header .header_left .logo_text {
-    font-size: 18px;
-    font-weight: 450;
-    padding: 14.5px 10px;
-    border-radius: 5px;
-    color: var(--icat-style-text-color);
-}
-header .header_right .navbar_menus {
-    height: 54px;
-    padding: 0 0 0 15px;
-}
-header .header_right .button {
-    color: var(--icat-style-text-color);
-}
-header .header_right .navbar_menus .navbar-menu {
-    display: inline-block;
-    align-items: center;
-    height: 54px;
-    padding: 0 10px;
-    font-size: 16px;
-    line-height: 54px;
-}
-header .header_right .dropdown-icon {
-    display: none;
-    height: 54px;
-    padding: 15px 10px;
-    border: 0;
-    background-color: transparent;
-}
-header .header_right .dropdown-menus {
-    line-height: 2rem;
-    animation: slide-in .15s ease 1;
-    display: none;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    top: calc(54px + 10px);
-    border-radius: 6px;
-    padding: 24px;
-    background-color: var(--icat-nav-background-color);
-    border: 1px solid var(--icat-style-border-always);
-    z-index: 9999;
-    justify-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-header .header_right #btn-search, header .header_right #btn-toggle-dark{
-    display: inline-block;
-    padding:  18px 10px;
-    height: 25px;
-}
-header .header_right #btn-dropdown{
-  display: inline-block;
-  padding:  13.5px 0;
-}
-header .header_right .dropdown-menus .dropdown-menu {
-    padding: 10px;
-    color: var(--icat-style-text-color);
-}
-@media screen and (max-width: 764px){
-.navbar_menus {
-    display: none!important;
-}
-.dropdown-icon {
-    display: inline-block!important;
-}
-}
+header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: fixed
+  height: 54px
+  padding: 0 1.25rem
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  border-bottom: 1px solid var(--icat-style-border-always)
+  background-color: var(--icat-nav-background-color)
+
+  .header_left,
+  .header_right
+    display: flex
+    align-items: center
+    font-family: rubik,sans-serif,Varela Round
+
+    .logo_text
+      font-size: 18px
+      font-weight: 450
+      padding: 14.5px 10px
+      border-radius: 5px
+      color: var(--icat-style-text-color)
+
+    .navbar_menus
+      height: 54px
+      padding: 0 0 0 15px
+
+      @media screen and (max-width: 768px)
+        display: none!important
+
+      .navbar-menu
+        display: inline-block
+        align-items: center
+        height: 54px
+        padding: 0 10px
+        font-size: 16px
+        line-height: 54px
+
+    .button
+      color: var(--icat-style-text-color)
+
+    .dropdown-icon
+      display: none
+      height: 54px
+      padding: 15px 10px
+      border: 0
+      background-color: transparent
+
+      @media screen and (max-width: 768px)
+        display: inline-block!important
+
+    .dropdown-menus
+      line-height: 2rem
+      animation: slide-in .15s ease 1
+      display: none
+      position: absolute
+      left: 12px
+      right: 12px
+      top: calc(54px + 10px)
+      border-radius: 6px
+      padding: 24px
+      background-color: var(--icat-nav-background-color)
+      border: 1px solid var(--icat-style-border-always)
+      z-index: 9999
+      justify-items: center
+      justify-content: center
+      flex-direction: column
+
+      @media screen and (max-width: 768px)
+        background-color: var(--icat-background-color)
+
+      .dropdown-menu
+        padding: 10px
+        color: var(--icat-style-text-color)
+        
+    #btn-search,
+    #btn-toggle-dark
+      display: inline-block
+      padding:  18px 10px
+      height: 25px
+
+    #btn-dropdown
+      display: inline-block
+      padding:  13.5px 0
+
+.display-inline
+  display: inline !important
+  text-align: center

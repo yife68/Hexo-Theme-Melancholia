@@ -1,3 +1,142 @@
+function loadScript(isAsync, url, cb, isMoudule) {
+    let script = document.createElement('script');
+    script.src = url;
+    if (cb) script.onload = cb;
+    if (isMoudule) script.type = 'module';
+    if (!isAsync) { isAsync = true };
+    script.async = isAsync;
+    document.body.appendChild(script);
+}
+function prompt_core(msg, fd_t, click) {
+    let div = document.createElement("div");
+    div.innerHTML = `${msg}`;
+    div.id = "prompt_1";
+    div.style = "position: fixed; top: 20px;text-align: center; background: #fff; color: #000; left: 50vw;padding: 10px 25px; border-radius: 20px;transition: .35s;z-index: 99;font-size: 0.9rem;font-weight: 300;font-family: 'Avenir', Helvetica, Arial, sans-serif;transform: translate(-50%,0)!important";
+    div.style.opacity = 0;
+    // 点击消失
+    if (click) {
+        div.onclick = () => {
+            document.getElementById("prompt_1").style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById("prompt_1").remove();
+            }, 1000);
+        }
+    }
+    document.body.appendChild(div);
+    // 渐入效果
+    setTimeout(() => {
+        document.getElementById("prompt_1").style.opacity = 1;
+    }, 100);
+    setTimeout(() => {
+        try {
+            document.getElementById("prompt_1").style.opacity = 0;
+            setTimeout(() => {
+                document.getElementById("prompt_1").remove();
+            }, 1000);
+        } catch (e) {}
+    }, fd_t);
+}
+
+/**
+ * loadScriptFile
+ * option: object
+ * url: script 地址
+ * cb: script onload 事件
+ * module: 是否为模块
+ * loadType: async/defer
+ * TIP: 这是对 loadScript() 的 Breaking Changes.
+ */
+function loadScriptFile(option) {
+    let script = document.createElement('script');
+    script.src = option.url;
+    if (option.cb) script.onload = option.cb;
+    if (option.module) script.type = 'module';
+    script[option.loadType] = true;
+    document.body.appendChild(script);
+}
+/**
+ * 选择器
+ * query(".class") => <div class="class"></div>
+ * query("#id") => <div id="id"></div>
+ * query("label") => <label></label>
+ */
+function query(selector) {
+    return Array.from(document.querySelectorAll(selector));
+}
+/**
+ * addClass
+ * e: CSS 选择器
+ * c: 添加的 Class，可为 string / object
+ */
+function addClass(e, c) {
+    // 对 element 进行遍历
+    for (let i = 0; i < query(e).length; i++) {
+        if (typeof c == "object") {
+            // 如果给了一个 object: ["class1", "class2"]
+            for (let o = 0; o < c.length; o++) {
+                query(e)[i].classList.add(c[o]);
+            }
+        } else {
+            // 其他的格式: "class"
+            query(e)[i].classList.add(c);
+        }
+    }
+}
+/**
+ * removeClass
+ * e: CSS 选择器
+ * c: 删除的 Class，可为 string / object
+ */
+function removeClass(e, c) {
+    // 对 element 进行遍历
+    for (let i = 0; i < query(e).length; i++) {
+        if (typeof c == "object") {
+            // 如果给了一个 object: ["class1", "class2"]
+            for (let o = 0; o < c.length; o++) {
+                query(e)[i].classList.remove(c[o]);
+            }
+        } else {
+            // 其他的格式: "class"
+            query(e)[i].classList.remove(c);
+        }
+    }
+}
+/**
+ * inArray
+ * 检索 String 是否存在于 Array 中
+ * stringToSearch: String
+ * arrayToSearch: Array
+ */
+function inArray(stringToSearch, arrayToSearch) {
+    for (s = 0; s < arrayToSearch.length; s++) {
+        thisEntry = arrayToSearch[s].toString();
+        if (thisEntry == stringToSearch) {
+            return true;
+        }
+    }
+    return false;
+}
+/**
+ * toggleClass
+ * e: CSS 选择器
+ * c: 切换的 Class，可为 string / object
+ */
+function toggleClass(e, c) {
+    // 对 element 进行遍历
+    for (let i = 0; i < query(e).length; i++) {
+        if (typeof c == "object") {
+            // 如果给了一个 object: ["class1", "class2"]
+            for (let o = 0; o < c.length; o++) {
+                inArray(c[o], query(e)[i].classList) ? removeClass(e, c[o]) : addClass(e, c[o]);
+            }
+        } else {
+            inArray(c, query(e)[i].classList) ? removeClass(e, c) : addClass(e, c);
+        }
+    }
+}
+
+
+
 (() => {
     const rootElement = document.documentElement;
     const darkModeStorageKey = 'user-color-scheme';
