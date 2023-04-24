@@ -49,7 +49,7 @@ module.exports = (hexo) => {
     });
     res.on('end', () => {
       try {
-        const tag = JSON.parse(result).tag_name;
+        const tag = JSON.parse(result).name;
         if (!tag) {
           errorLog('Missing release tag');
           return;
