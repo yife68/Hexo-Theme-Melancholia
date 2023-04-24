@@ -5,15 +5,15 @@ index:
   url: true
   # 是否开启获取页面的url链接显示
   icon:
-    favicon: https://meuicat.com/media/favicon.ico
-    seventy_eight: https://meuicat.com/media/favicon-32x32.png
+    favicon:
+    seventy_eight:
     # 用于苹果设备的图标 78x78
-    one_hundred_and_eighty: https://meuicat.com/media/android-chrome-192x192.png
+    one_hundred_and_eighty:
     # 用于苹果设备的图标 180x180
   twitter:
   # 分享平台获取参数
-    enable: true
-    image: https://s1.ax1x.com/2023/04/20/p9kzdMQ.png
+    enable: false
+    image:
     # 分享至其他平台时显示的图片摘要
   https: true
   # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
@@ -60,3 +60,15 @@ nav:
     关于: /about/
   dark: true
   # 暗黑模式
+
+
+# 腾讯 CoDesign - icon
+# https://codesign.qq.com/
+# --------------------------------------
+
+icon:
+  key:
+  # CSS链接里中间的key
+  # 示例：https://cdn3.codesign.qq.com/icons/是此处的Key/latest/iconfont.css
+  iconfont_family:
+  iconfont:
