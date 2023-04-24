@@ -70,17 +70,17 @@ module.exports = (hexo) => {
 
         if (isOutdated) {
           if (isZh) {
-            hexo.log.warn(`[Miracle] 有新的版本！当前版本: v${current.join('.')}, 最新版本: v${latest.join('.')}`);
-            hexo.log.warn('[Miracle] 请查看 https://github.com/yife68/Hexo-Theme-Melancholia/issues 获取更多信息.');
+            hexo.log.warn(`[Melancholia] 有新的版本！当前版本: v${current.join('.')}, 最新版本: v${latest.join('.')}`);
+            hexo.log.warn('[Melancholia] 请查看 https://github.com/yife68/Hexo-Theme-Melancholia/issues 获取更多信息.');
           } else {
-            hexo.log.warn(`[Miracle] There's a new version! Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
-            hexo.log.warn('[Miracle] Visit https://github.com/yife68/Hexo-Theme-Melancholia/issues for more information.');
+            hexo.log.warn(`[Melancholia] There's a new version! Current version: v${current.join('.')}, latest version: v${latest.join('.')}`);
+            hexo.log.warn('[Melancholia] Visit https://github.com/yife68/Hexo-Theme-Melancholia/issues for more information.');
           }
         } else {
           if (isZh) {
-            hexo.log.info(`[Miracle] 您现在使用的是已经是最新版本，版本号: v${current.join('.')}`);
+            hexo.log.info(`[Melancholia] 您现在使用的是已经是最新版本，版本号: v${current.join('.')}`);
           } else {
-            hexo.log.info(`[Miracle] Congratulations! You are using the latest version. Current version: v${current.join('.')}`);
+            hexo.log.info(`[Melancholia] Congratulations! You are using the latest version. Current version: v${current.join('.')}`);
           }
         }
       } catch (err) {
