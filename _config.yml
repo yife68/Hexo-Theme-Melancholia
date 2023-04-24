@@ -17,6 +17,8 @@ index:
     # 分享至其他平台时显示的图片摘要
   https: true
   # 强制所有链接升级为 HTTPS（适用于图片等资源出现 HTTP 混入报错）
+  version_check: true
+  # 每次生成页面后，检测主题是否为最新版本
 
 
 # 网站站长工具
