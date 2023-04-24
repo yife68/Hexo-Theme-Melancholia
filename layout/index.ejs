@@ -6,25 +6,26 @@
         </div>
         <div class="banner-details">
             <div class="book-details">
-                <img src="https://yife68.gitee.io/icat-pic/collect/book/7.webp">
+                <img src="<%= url_for(theme.book.cover) %>">
                 <div class="details">
                     <div class="details-title">
-                        <p>朱砂一点红：红尘欭</p>
-                        <span>连载中</span>
+                        <p><%= theme.book.title %></p>
+                        <% if (theme.book.completion_status==0) { %><span class="publish-in-instalments">连载中</span><% } %>
+                        <% if (theme.book.completion_status==1) { %><span class="end">完结</span><% } %>
                     </div>
                     <div class="details-describe">
                         <span>
-                            缘起，我在人群中看见你；缘散，我看见你在人群中；故事结束了，但并不代表着终章；每个人的一生，都会遇到一些特别的故事，是暮翠朝红；也有盟山誓海；亦或流水桃花；总归我们都会有各自的生活，开始新的旅程
+                            <%= theme.book.describe.one %>
                         </span><br>
-                        <span>
-                            亲手湮灭一段不渝的爱情，也见过许多BE的人间常态；有人一头扎进玄学，企图通过塔罗星座去揣测这世间最神秘的一种情感；有人在寺庙祈祷姻缘，来命定二人八字的和与否；也有人自我放弃，亦或自我救赎;是凌晨宿醉，买醉忘却烦心之结，日复一日，度日如年；亦或是奋发上进，妄图能使失望之人对己有所改观
-                        </span>
+                        <% if (theme.book.describe.two) { %><span>
+                            <%= theme.book.describe.two %>
+                        </span><% } %>
                     </div>
                     <div class="details-author">
                         <p>作者：</p>
-                        <p>亦封</p>
+                        <p><%= theme.book.author %></p>
                         <span>|</span>
-                        <a href="https://meuicat.com/">关于作者</a>
+                        <a href="<%= url_for(theme.book.author_home) %>">关于作者</a>
                     </div>
                 </div>
             </div>

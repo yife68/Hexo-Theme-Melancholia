@@ -79,3 +79,25 @@ darkmode:
   enable: true
   display_mode: light
   # 默认颜色 白天 / 夜晚 【 light / dark 】
+
+
+# banner书籍栏信息
+# --------------------------------------
+
+book:
+  cover:
+  # 书籍封面
+  title:
+  # 书名
+  describe:
+  # 书籍简介
+    one:
+    # 此处的简介介绍必须填写
+    two:
+    # 第二段可选填，留空即不显示第二段的简介介绍
+  author:
+  # 作者
+  author_home:
+  # 作者主页
+  completion_status: 0
+  # 完结状态 连载中 / 完结 【 0 / 1 】
