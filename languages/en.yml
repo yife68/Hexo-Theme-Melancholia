@@ -1,12 +1,3 @@
-search:
-  title: Search
-  keyword: keyword
-  status:
-    success: v
-    error: x
-
-postTotal: "%d posts in total."
-
 paginator:
   pre: Previous
   next: Next
