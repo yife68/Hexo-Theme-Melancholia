@@ -1,0 +1,118 @@
+#main
+
+  .middle-main
+    margin: 0 100px
+    margin-top: 12px
+    padding: 20px 30px
+    background-color: var(--icat-background-color)
+    border-radius: 8px
+    display: flex
+
+    @media screen and (max-width: 768px)
+      display: grid
+      margin: 0 16px
+      margin-top: 12px
+
+    .information-left
+      min-width: calc(100% / 2)
+      display: flex
+      align-items: center
+
+      .left-layout
+        min-width: calc(100% / 2)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+        .read
+          display: contents
+
+          .read-button
+            padding: 14px 34px
+            background-color: #F56C6C
+            border-radius: 4px
+            border: 1px solid var(--icat-style-border-always)
+            width: 100%
+            text-align: center
+            margin-right: 15px
+            color: #FFF
+
+            i
+              margin-right: 6px
+
+      .right-layout
+        min-width: calc(100% / 2)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+        .popularity
+          display: flex
+          justify-content: center
+          background-color: #E6A23C
+          border-radius: 4px
+          border: 1px solid var(--icat-style-border-always)
+          width: 100%
+          padding: 14px 34px
+          margin-left: 13px
+          color: #FFF
+
+          .pe
+            display: none!important
+
+            @media screen and (max-width: 768px)
+              display: flex
+
+              i
+                margin-right: 6px
+
+          .popularity-top
+            @media screen and (max-width: 768px)
+              display: none!important
+
+    .information-right
+      min-width: calc(100% / 2)
+      display: flex
+      align-items: center
+      justify-content: space-around
+
+      @media screen and (max-width: 768px)
+        padding-top: 16px
+
+      .left-layout
+        min-width: calc(100% / 2)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+        .renew
+          display: grid
+          justify-items: center
+        
+        .title
+          font-weight: 600
+          color: var(--icat-text-color)
+
+        .content
+          color: var(--icat-banner-book-text-color)
+          font-size: 14px
+          font-weight: 600
+
+      .right-layout
+        min-width: calc(100% / 2)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+        .latest-chapter
+          display: grid
+          justify-items: center
+
+        .title
+          font-weight: 600
+          color: var(--icat-text-color)
+
+        .content
+          color: var(--icat-banner-book-text-color)
+          font-size: 14px
+          font-weight: 600
