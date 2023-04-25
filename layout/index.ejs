@@ -35,33 +35,39 @@
         <div class="information-left">
             <div class="left-layout">
                 <div class="read" id="darken">
-                    <a class="read-button" href="<%= url_for(theme.book.author_home) %>">
-                        <i class="far fa-hand-point-right"></i>
+                    <% var latestPost = site.posts.sort('-date').first(); %><a class="read-button" href="<%- url_for(latestPost.path) %>">
+                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>start-reading"></i>
                         开始阅读
                     </a>
                 </div>
             </div>
             <div class="right-layout">
                 <div class="popularity" id="darken">
-                    <div class="popularity-top pe">
-                        <i class="far fa-hand-point-right"></i>
+                    <div class="popularity-top-pe">
+                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>popularity"></i>
                     </div>
                     <div class="popularity-top">人气：</div>
-                    <div class="popularity-buttom">123K</div>
+                    <div class="popularity-buttom"><span id="busuanzi_value_site_pv"></span></div>
                 </div>
             </div>
         </div>
         <div class="information-right">
             <div class="left-layout">
                 <div class="renew">
-                    <div class="renew-top title" id="darken">最后更新时间</div>
-                    <div class="renew_buttom content">2023-04-25 02:21</div>
+                    <div class="renew-top title" id="darken">全书总字</div>
+                    <div class="renew_buttom content"><%= totalcount(site) %></div>
+                </div>
+            </div>
+            <div class="middle-layout">
+                <div class="total-number-of-words">
+                    <div class="total-number-of-words-top title" id="darken">最后更新</div>
+                    <% var latestPost = site.posts.sort('-date').first(); %><div class="total-number-of-words_buttom content"><%= latestPost.updated.format('YYYY-MM-DD HH:mm') %></div>
                 </div>
             </div>
             <div class="right-layout">
                 <div class="latest-chapter">
                     <div class="latest-chapter-top title" id="darken">最新章节</div>
-                    <div class="latest-chapter-buttom content">第三章</div>
+                    <% var latestPost = site.posts.sort('-date').first(); %><div class="latest-chapter-buttom content"><%= latestPost.title %></div>
                 </div>
             </div>
         </div>

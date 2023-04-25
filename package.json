@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-melancholia",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A concise, efficient, and visually appealing Hexo theme developed by iCat",
   "repository": {
     "type": "git",
@@ -9,12 +9,15 @@
   "keywords": [
     "hexo",
     "theme",
-    "Hexo-Theme-Melancholia"
+    "Hexo-Theme-Melancholia",
+    "MeuiCat",
+    "iCat",
+    "YiFe"
   ],
-  "author": "Hexo-Theme-Melancholia<meuicat_718@163.com>",
+  "author": "@yife68 <meuicat_718@163.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yife68/Hexo-Theme-Melancholia/issues"
   },
-  "homepage": "https://github.com/yife68/Hexo-Theme-Melancholia#readme"
+  "homepage": "https://meuicat.com/"
 }

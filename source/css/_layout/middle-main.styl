@@ -28,7 +28,7 @@
           display: contents
 
           .read-button
-            padding: 14px 34px
+            padding: 14px 0
             background-color: #F56C6C
             border-radius: 4px
             border: 1px solid var(--icat-style-border-always)
@@ -39,6 +39,9 @@
 
             i
               margin-right: 6px
+
+              @media screen and (max-width: 768px)
+                margin-right: 0
 
       .right-layout
         min-width: calc(100% / 2)
@@ -57,18 +60,18 @@
           margin-left: 13px
           color: #FFF
 
-          .pe
-            display: none!important
+          .popularity-top-pe
+            display: none
 
             @media screen and (max-width: 768px)
-              display: flex
+              display: block
 
-              i
-                margin-right: 6px
+            i
+              margin-right: 6px
 
           .popularity-top
             @media screen and (max-width: 768px)
-              display: none!important
+              display: none
 
     .information-right
       min-width: calc(100% / 2)
@@ -77,10 +80,11 @@
       justify-content: space-around
 
       @media screen and (max-width: 768px)
-        padding-top: 16px
+        padding-top: 18px
+        display: grid
 
       .left-layout
-        min-width: calc(100% / 2)
+        min-width: calc(100% / 3)
         display: flex
         align-items: center
         justify-content: space-around
@@ -89,30 +93,61 @@
           display: grid
           justify-items: center
         
-        .title
-          font-weight: 600
-          color: var(--icat-text-color)
+          .title
+            font-weight: 600
+            color: var(--icat-text-color) 
 
-        .content
-          color: var(--icat-banner-book-text-color)
-          font-size: 14px
-          font-weight: 600
-
-      .right-layout
-        min-width: calc(100% / 2)
+          .content
+            color: var(--icat-banner-book-text-color)
+            font-size: 14px
+            font-weight: 600
+            text-align: center
+            margin-top: 6px
+        
+      .middle-layout
+        min-width: calc(100% / 3)
         display: flex
         align-items: center
         justify-content: space-around
+
+        @media screen and (max-width: 768px)
+          margin-top: 12px
+
+        .total-number-of-words
+          display: grid
+          justify-items: center
+
+          .title
+            font-weight: 600
+            color: var(--icat-text-color)
+
+          .content
+            color: var(--icat-banner-book-text-color)
+            font-size: 14px
+            font-weight: 600
+            text-align: center
+            margin-top: 6px
+
+      .right-layout
+        min-width: calc(100% / 3)
+        display: flex
+        align-items: center
+        justify-content: space-around
+
+        @media screen and (max-width: 768px)
+          margin-top: 12px
 
         .latest-chapter
           display: grid
           justify-items: center
 
-        .title
-          font-weight: 600
-          color: var(--icat-text-color)
+          .title
+            font-weight: 600
+            color: var(--icat-text-color)
 
-        .content
-          color: var(--icat-banner-book-text-color)
-          font-size: 14px
-          font-weight: 600
+          .content
+            color: var(--icat-banner-book-text-color)
+            font-size: 14px
+            font-weight: 600
+            text-align: center
+            margin-top: 6px
