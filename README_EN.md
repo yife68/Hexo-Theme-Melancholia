@@ -44,6 +44,14 @@ Modify the hexo configuration file `_ config. yml` , change the theme to `Melanc
 theme: Melancholia
 ```
 
+## 🛑 Necessary plugins
+
+### wordcount
+
+```bash
+npm install hexo-wordcount --save
+```
+
 ## ✨ Theme Contributors
 
 ### Developer

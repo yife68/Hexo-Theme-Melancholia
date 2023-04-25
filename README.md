@@ -44,6 +44,14 @@ git clone -b main https://github.com/yife68/Hexo-Theme-Melancholia.git themes/Me
 theme: Melancholia
 ```
 
+## 🛑 必要插件
+
+### 字数统计
+
+```bash
+npm install hexo-wordcount --save
+```
+
 ## ✨ 贡献者
 
 ### 开发者
