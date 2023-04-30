@@ -23,32 +23,32 @@ header
   align-items: center
   position: fixed
   height: 54px
-  padding: 0 1.25rem
+  padding: 0 16.25rem
   top: 0
   left: 0
   right: 0
   z-index: 10
-  border-bottom: 1px solid var(--icat-style-border-always)
+  border-bottom: 1px solid var(--icat-card-border)
   background-color: var(--icat-nav-background-color)
 
+  @media screen and (max-width: 767px)
+    padding: 0 8px 0 20px
+
+  @media screen and (min-width: 768px) and (max-width: 1668px)
+    padding: 0 4.25rem
+
   .header_left,
+  .header_middle,
   .header_right
     display: flex
     align-items: center
-    font-family: rubik,sans-serif,Varela Round
-
-    .logo_text
-      font-size: 18px
-      font-weight: 450
-      padding: 14.5px 10px
-      border-radius: 5px
-      color: var(--icat-style-text-color)
 
     .navbar_menus
       height: 54px
       padding: 0 0 0 15px
+      letter-spacing: 0.2rem
 
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 820px)
         display: none!important
 
       .navbar-menu
@@ -60,16 +60,14 @@ header
         line-height: 54px
 
     .button
-      color: var(--icat-style-text-color)
+      color: var(--icat-fontcolor)
 
     .dropdown-icon
       display: none
       height: 54px
       padding: 15px 10px
-      border: 0
-      background-color: transparent
 
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 820px)
         display: inline-block!important
 
     .dropdown-menus
@@ -83,18 +81,18 @@ header
       border-radius: 6px
       padding: 24px
       background-color: var(--icat-nav-background-color)
-      border: 1px solid var(--icat-style-border-always)
+      border: 1px solid var(--icat-card-border)
       z-index: 9999
       justify-items: center
       justify-content: center
       flex-direction: column
 
-      @media screen and (max-width: 768px)
+      @media screen and (max-width: 820px)
         background-color: var(--icat-nav-pe-background-color)
 
       .dropdown-menu
         padding: 10px
-        color: var(--icat-style-text-color)
+        color: var(--icat-fontcolor)
         
     #btn-search,
     #btn-toggle-dark

@@ -62,7 +62,7 @@ npm install hexo-wordcount --save
 [@LX亦封](https://github.com/yife68)
 
 ## 开发进度
-30% - [实时开发进度显示](https://meuicat.com/project/)
+40% - [实时开发进度显示](https://meuicat.com/project/)
 
 ![](https://wakatime.com/badge/user/83fb0ced-264a-4219-b3ae-e8d36271fda7/project/f0001bb9-18f5-4eb4-9d36-17d87d7d9a73.svg)
 

@@ -1,0 +1,76 @@
+<div id="main">
+    <div class="top-main">
+        <div class="banner-head">
+            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>details"></i>
+            <span>书籍详情</span>
+        </div>
+        <div class="banner-details">
+            <div class="book-details">
+                <img src="<%= url_for(theme.book.cover) %>">
+                <div class="details">
+                    <div class="details-title">
+                        <p><%= theme.book.title %></p>
+                        <% if (theme.book.completion_status==0) { %><span class="publish-in-instalments">连载中</span><% } %>
+                        <% if (theme.book.completion_status==1) { %><span class="end">完结</span><% } %>
+                    </div>
+                    <div class="details-describe">
+                        <span>
+                            <%= theme.book.describe.one %>
+                        </span><br>
+                        <% if (theme.book.describe.two) { %><span>
+                            <%= theme.book.describe.two %>
+                        </span><% } %>
+                    </div>
+                    <div class="details-author">
+                        <p>作者：</p>
+                        <p><%= theme.book.author %></p>
+                        <span>|</span>
+                        <a href="<%= url_for(theme.book.author_home) %>" data-pjax-state>关于作者</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-main">
+        <div class="information-left">
+            <div class="left-layout">
+                <div class="read" id="darken">
+                    <% var latestPost = site.posts.sort('-date').first(); %><a class="read-button" href="<%- url_for(latestPost.path) %>">
+                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>start-reading"></i>
+                        开始阅读
+                    </a>
+                </div>
+            </div>
+            <div class="right-layout">
+                <div class="popularity" id="darken">
+                    <div class="popularity-top-pe">
+                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>popularity"></i>
+                    </div>
+                    <div class="popularity-top">人气：</div>
+                    <div class="popularity-buttom"><span id="busuanzi_value_site_pv"></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="information-right">
+            <div class="left-layout">
+                <div class="renew">
+                    <div class="renew-top title" id="darken">全书总字</div>
+                    <div class="renew_buttom content"><%= totalcount(site) %></div>
+                </div>
+            </div>
+            <div class="middle-layout">
+                <div class="total-number-of-words">
+                    <div class="total-number-of-words-top title" id="darken">最后更新</div>
+                    <% var latestPost = site.posts.sort('-date').first(); %><div class="total-number-of-words_buttom content"><%= latestPost.updated.format('YYYY-MM-DD HH:mm') %></div>
+                </div>
+            </div>
+            <div class="right-layout">
+                <div class="latest-chapter">
+                    <div class="latest-chapter-top title" id="darken">最新章节</div>
+                    <% var latestPost = site.posts.sort('-date').first(); %><div class="latest-chapter-buttom content"><%= latestPost.title %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buttom-main"></div>
+</div>

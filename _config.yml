@@ -1,3 +1,26 @@
+# Theme: hexo-theme-Melancholia
+# Author: 亦封
+# Maintainer: @yife68
+# Maintainer-GitHub: https://github.com/yife68# 
+
+# theme - GitHub: https://github.com/yife68/hexo-theme-Melancholia# 
+# 
+
+# 主题: hexo-theme-Melancholia
+# 作者: 亦封
+# 维护人员: @yife68
+# 维护人员的GitHub个人地址: https://github.com/yife68# 
+
+# 主题的GitHub个人地址: https://github.com/yife68/hexo-theme-Melancholia
+
+
+
+# --------------------------------------
+# 配置版本 V0.0.6
+# --------------------------------------
+
+
+
 # 头部 head 配置
 # --------------------------------------
 
@@ -65,11 +88,11 @@ nav:
 # --------------------------------------
 
 icon:
-  key:
+  key: 1Yyg5ZpD7pZ2lKv
   # CSS链接里中间的key
   # 示例：https://cdn3.codesign.qq.com/icons/是此处的Key/latest/iconfont.css
-  iconfont_family:
-  iconfont:
+  iconfont_family: iCat
+  iconfont: icon-
 
 
 # 暗黑模式
@@ -87,17 +110,29 @@ darkmode:
 book:
   cover:
   # 书籍封面
+  cover_host_color: '#0093E9'
+  # 封面主色调
+  cover_assistant_color: '#80D0C7'
+  # 封面副色调
   title:
   # 书名
+  category: 
+  # 书籍类别
+    - 示例
+    # - 可多标签 （建议不超过4个）
   describe:
   # 书籍简介
-    one:
+    one: 我是书籍介绍描述
     # 此处的简介介绍必须填写
     two:
     # 第二段可选填，留空即不显示第二段的简介介绍
-  author:
+  author: 亦封
   # 作者
-  author_home:
+  introduce: 山高路遠 看世界 也找自己.
+  # 作者介绍
+  author_home: https://meuicat.com/
   # 作者主页
+  author_img:
+  # 作者头像
   completion_status: 0
   # 完结状态 连载中 / 完结 【 0 / 1 】

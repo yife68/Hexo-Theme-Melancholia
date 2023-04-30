@@ -1,7 +1,7 @@
 <div class="header_left">
 	<a href="<%- url_for() %>" class="button"><span class="header_text"><%= theme.nav.title || config.title %></span></a>
 </div>
-<div class="header_right">
+<div class="header_middle">
 	<div class="navbar_menus">
 		<% for (var i in theme.nav.menu) { %>
 		<a href="<%- url_for(theme.nav.menu[i]) %>" class="button">
@@ -9,6 +9,8 @@
 		</a>
 		<% } %>
 	</div>
+</div>
+<div class="header_right">
 	<% if (theme.darkmode.enable) { %><a href="javaScript:void(0);" class="button" id="btn-toggle-dark">
 		<div>
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"

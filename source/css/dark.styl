@@ -18,26 +18,119 @@
 
 
 :root
-  --icat-style-border-always: #E1E4E8
+  --icat-white: #fff
+  --icat-white-op: rgba(255, 255, 255, 0.2)
+  --icat-black: #000
+  --icat-black-op: rgba(0, 0, 0, 0.2)
+  --icat-none: #00000000
+  --icat-gray: #999999
+  --icat-gray-op: #9999992b
+  --icat-vip: #e5a80d
+  --icat-main: var(--icat-theme)
+  --icat-main-op: var(--icat-theme-op)
+  --icat-main-op-deep: var(--icat-theme-op-deep)
+  --icat-main-none: var(--icat-theme-none)
+  --icat-shadow-theme: 0 8px 12px -3px var(--icat-theme-op)
+  --icat-shadow-blackdeep: 0 2px 16px -3px rgba(0, 0, 0, .15)
+  --icat-shadow-main: 0 8px 12px -3px var(--icat-main-op)
+  --icat-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234, .20)
+  --icat-shadow-white: 0 8px 12px -3px rgba(255, 255, 255, .20)
+  --icat-shadow-black: 0 0 12px 4px rgba(0, 0, 0, .05)
+  --icat-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62, .12)
+  --icat-shadow-red: 0 8px 12px -3px #ee7d7936
+  --icat-shadow-green: 0 8px 12px -3px #87ee7936
+  --icat-logo-color: linear-gradient(215deg, #4584ff 0%, #cf0db9 100%)
+  --icat-snackbar-time: 5s
+  --icat-theme: #425AEF
+  --icat-theme-op: #4259ef23
+  --icat-theme-op-deep: #4259efdd
+  --icat-theme-none: #4259ef01
+  --icat-blue: #425AEF
+  --icat-red: #f04a63
+  --icat-pink: #FF7C7C
+  --icat-green: #57bd6a
+  --icat-yellow: #c28b00
+  --icat-yellow-op: #d99c001a
+  --icat-orange: #e38100
+  --icat-fontcolor: #363636
+  --icat-background: #f7f9fe
+  --icat-reverse: #000
+  --icat-maskbg: rgba(255, 255, 255, 0.6)
+  --icat-maskbgdeep: rgba(255, 255, 255, 0.85)
+  --icat-hovertext: var(--icat-main)
+  --icat-ahoverbg: #F7F7FA
+  --icat-lighttext: var(--icat-main)
+  --icat-secondtext: rgba(60, 60, 67, 0.8)
+  --icat-scrollbar: rgba(60, 60, 67, 0.4)
+  --icat-card-btn-bg: #edf0f7
+  --icat-post-blockquote-bg: #fafcff
+  --icat-post-tabs-bg: #f2f5f8
+  --icat-secondbg: #f1f3f8
+  --icat-shadow-nav: 0 5px 12px -5px rgba(102, 68, 68, 0.05)
+  --icat-card-bg: #fff
+  --icat-card-bg-op: var(--icat-black-op)
+  --icat-card-bg-none: rgba(255, 255, 255, 0)
+  --icat-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.00)
+  --icat-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.00)
+  --icat-card-border: #e3e8f7
+  --icat-shadow-border: 0 8px 16px -4px #2c2d300c
+  --style-border: 1px solid var(--icat-card-border)
+  --style-border-always: 1px solid var(--icat-card-border)
+  --style-border-hover: 1px solid var(--icat-main)
+  --style-border-hover-always: 1px solid var(--icat-main)
+  --style-border-dashed: 1px dashed var(--icat-theme-op)
+  --style-border-forever: 2px solid var(--icat-main)
   --icat-nav-background-color: rgba(255,255,255,0.6)
-  --icat-nav-pe-background-color: #FBFBFB
-  --icat-style-background-color: #F4F4F4
-  --icat-style-text-color: #1B1B1B
-  --icat-background-color: #FFF
-  --icat-text-color: #000
-  --icat-describe-text-color: #B3B3AE
-  --icat-banner-book-text-color: #DD4B39
+  --icat-nav-pe-background-color: rgba(252,253,255,1)
+  --icat-text-highlight-color: #1f2d3d
+  --icat-banner-text-color: #dd4b39
+  --icat-darken-filter: brightness(1)
 
 if hexo-config('darkmode.enable') || hexo-config('display_mode') == 'dark'
   [data-theme='dark']
-    --icat-style-border-always: rgba(255,255,255,0.1)
-    --icat-nav-background-color: rgba(13,17,23,0.6)
-    --icat-nav-pe-background-color: #121418
-    --icat-style-background-color: #191919
-    --icat-style-text-color: hsla(0,0%,100%,0.86)
-    --icat-background-color: #121212
-    --icat-text-color: #FFF
-    --icat-describe-text-color: #EDEDED
+      --icat-theme: #f2b94b
+      --icat-theme-op: #f2b94b23
+      --icat-theme-op-deep: #f2b94bdd
+      --icat-theme-none: #f2b94b00
+      --icat-blue: #0084FF
+      --icat-red: #FF3842
+      --icat-pink: #d44040
+      --icat-green: #3e9f50
+      --icat-yellow: #ffc93e
+      --icat-yellow-op: #ffc93e30
+      --icat-orange: #ff953e
+      --icat-fontcolor: #F7F7FA
+      --icat-background: #18171d
+      --icat-reverse: #fff
+      --icat-maskbg: rgba(0, 0, 0, 0.6)
+      --icat-maskbgdeep: rgba(0, 0, 0, 0.85)
+      --icat-hovertext: #0A84FF
+      --icat-ahoverbg: #fff
+      --icat-lighttext: var(--icat-theme)
+      --icat-secondtext: #a1a2b8
+      --icat-scrollbar: rgba(200, 200, 223, 0.4)
+      --icat-card-btn-bg: #30343f
+      --icat-post-blockquote-bg: #000
+      --icat-post-tabs-bg: #121212
+      --icat-secondbg: #30343f
+      --icat-shadow-nav: 0 5px 20px 0px rgba(28, 28, 28, 0.4)
+      --icat-card-bg: #1d1e22
+      --icat-card-bg-op: var(--icat-white-op)
+      --icat-card-bg-none: #1d1b2600
+      --icat-shadow-lightblack: 0 5px 12px -5px rgba(102, 68, 68, 0.0)
+      --icat-shadow-light2black: 0 5px 12px -5px rgba(102, 68, 68, 0.0)
+      --icat-card-border: #3d3d3f
+      --icat-shadow-border: 0 8px 16px -4px #00000050
+      --style-border: 1px solid var(--icat-card-border)
+      --style-border-always: 1px solid var(--icat-card-border)
+      --style-border-hover: 1px solid var(--icat-theme)
+      --style-border-hover-always: 1px solid var(--icat-theme)
+      --style-border-dashed: 1px dashed var(--icat-theme-op)
+      --style-border-forever: 2px solid var(--icat-lighttext)
+      --icat-nav-background-color: rgba(30,30,30,0.6)
+      --icat-nav-pe-background-color: rgba(27,28,30,1)
+      --icat-text-highlight-color: #fff
+      --icat-darken-filter: brightness(0.9)
 
     #darken
       filter: brightness(.9)

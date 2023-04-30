@@ -1,76 +1,107 @@
+<% var posts = site.posts.sort('-date'); %>
+<% var lastPost = posts.toArray()[posts.length - 1]; %>
+<% var lastPostDate = new Date(lastPost.date); %>
+<% var today = new Date(); %>
+<% var daysSinceLastPost = Math.floor((today - lastPostDate) / (1000 * 60 * 60 * 24)); %>
 <div id="main">
-    <div class="top-main">
-        <div class="banner-head">
-            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>details"></i>
-            <span>书籍详情</span>
-        </div>
-        <div class="banner-details">
-            <div class="book-details">
-                <img src="<%= url_for(theme.book.cover) %>">
-                <div class="details">
-                    <div class="details-title">
-                        <p><%= theme.book.title %></p>
-                        <% if (theme.book.completion_status==0) { %><span class="publish-in-instalments">连载中</span><% } %>
-                        <% if (theme.book.completion_status==1) { %><span class="end">完结</span><% } %>
+    <div id="details">
+        <div class="pc-main">
+            <div class="banner">
+                <div class="banner-left">
+                    <img src="<%= url_for(theme.book.cover) %>">
+                    <div class="book-information">
+                        <div class="book-title">
+                            <p class="title"><%= theme.book.title %></p>
+                            <% if (theme.book.completion_status==0) { %><span class="publish-in-instalments">连载中</span><% } %>
+                            <% if (theme.book.completion_status==1) { %><span class="end">完结</span><% } %>
+                        </div>
+                        <div class="book-category">
+                            <% for (var key in theme.book.category) { %><span class="category"><%- theme.book.category[key] %></span><% } %>
+                        </div>
+                        <div class="book-total one">
+                            <span><%= totalcount(site) %></span><span>字</span><span>&ensp;|&ensp;</span><span id="busuanzi_value_site_pv"></span><span>人气</span>
+                        </div>
+                        <div class="book-total two">
+                            <span class="bold">最后更新：</span><% var latestPost = site.posts.sort('-date').first(); %><span class="key"><%= latestPost.updated.format('YYYY-MM-DD HH:mm') %></span>
+                        </div>
+                        <div class="book-total three">
+                            <span class="bold">最新章节：</span><% var latestPost = site.posts.sort('-date').first(); %><span class="key"><%= latestPost.title %></span>
+                        </div>
+                        <% var latestPost = site.posts.sort('-date').first(); %><a class="read" id="darken" href="<%- url_for(latestPost.path) %>">
+                            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>start-reading"></i>
+                            开始阅读
+                        </a>
                     </div>
-                    <div class="details-describe">
-                        <span>
-                            <%= theme.book.describe.one %>
-                        </span><br>
-                        <% if (theme.book.describe.two) { %><span>
-                            <%= theme.book.describe.two %>
-                        </span><% } %>
-                    </div>
-                    <div class="details-author">
-                        <p>作者：</p>
-                        <p><%= theme.book.author %></p>
-                        <span>|</span>
-                        <a href="<%= url_for(theme.book.author_home) %>" data-pjax-state>关于作者</a>
+                </div>
+                <div class="banner-right">
+                    <div class="banner-introduce">
+                        <p>书籍介绍</p>
+                        <div class="book-introduce">
+                            <span>
+                                &ensp;&ensp;&ensp;&ensp;<%= theme.book.describe.one %>
+                            </span><br>
+                            <% if (theme.book.describe.two) { %><span>
+                                &ensp;&ensp;&ensp;&ensp;<%= theme.book.describe.two %>
+                            </span><% } %>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="middle-main">
-        <div class="information-left">
-            <div class="left-layout">
-                <div class="read" id="darken">
-                    <% var latestPost = site.posts.sort('-date').first(); %><a class="read-button" href="<%- url_for(latestPost.path) %>">
+        <div class="pe-main">
+            <div class="banner-top" style="background-color: <%= theme.book.cover_host_color %>; background-image: linear-gradient(45deg, <%= theme.book.cover_host_color %> 0%, <%= theme.book.cover_assistant_color %> 100%);">
+                <div class="book-information">
+                    <div class="title"><%= theme.book.title %></div>
+                    <div class="book-total">
+                        <span class="category"><%- theme.book.category[0] %></span><div class="separate"></div><% if (theme.book.completion_status==0) { %><span>连载中</span><% } %><% if (theme.book.completion_status==1) { %><span>完结</span><% } %><div class="separate"></div><span><%= totalcount(site) %></span><span>字</span>
+                    </div>
+                    <% var latestPost = site.posts.sort('-date').first(); %><a class="read" href="<%- url_for(latestPost.path) %>">
                         <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>start-reading"></i>
-                        开始阅读
+                        <span>开始阅读</span>
                     </a>
                 </div>
+                <img src="<%= url_for(theme.book.cover) %>">
             </div>
-            <div class="right-layout">
-                <div class="popularity" id="darken">
-                    <div class="popularity-top-pe">
-                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>popularity"></i>
+            <div class="banner-bottom">
+                <div class="banner-introduce">
+                    <p>书籍介绍</p>
+                    <div class="book-introduce">
+                        <span>
+                            &ensp;&ensp;&ensp;&ensp;<%= theme.book.describe.one %>
+                        </span><br>
+                        <% if (theme.book.describe.two) { %><span>
+                            &ensp;&ensp;&ensp;&ensp;<%= theme.book.describe.two %>
+                        </span><% } %>
                     </div>
-                    <div class="popularity-top">人气：</div>
-                    <div class="popularity-buttom"><span id="busuanzi_value_site_pv"></span></div>
+                    <div class="book-category">
+                        <% for (var key in theme.book.category) { %><span class="category"><%- theme.book.category[key] %></span><% } %>
+                    </div>
+                    <div id="separator-bar"></div>
+                    <div class="author">
+                        <div class="author-img">
+                            <img src="<%= theme.book.author_img %>">
+                        </div>
+                        <p>关于作者</p>
+                        <div class="author-name">
+                            <span class="name">笔名：</span>
+                            <span><%= theme.book.author %></span>
+                        </div>
+                        <div class="author-statistics">
+                            <span>积累字数<%= totalcount(site) %>字 | 创作天数<%= daysSinceLastPost %>天</span>
+                        </div>
+                        <div class="author-introduce">
+                            <p class="introduce">个人介绍</p>
+                            <span><%= theme.book.introduce %></span>
+                        </div>
+                        <div id="separator-bar"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="information-right">
-            <div class="left-layout">
-                <div class="renew">
-                    <div class="renew-top title" id="darken">全书总字</div>
-                    <div class="renew_buttom content"><%= totalcount(site) %></div>
-                </div>
-            </div>
-            <div class="middle-layout">
-                <div class="total-number-of-words">
-                    <div class="total-number-of-words-top title" id="darken">最后更新</div>
-                    <% var latestPost = site.posts.sort('-date').first(); %><div class="total-number-of-words_buttom content"><%= latestPost.updated.format('YYYY-MM-DD HH:mm') %></div>
-                </div>
-            </div>
-            <div class="right-layout">
-                <div class="latest-chapter">
-                    <div class="latest-chapter-top title" id="darken">最新章节</div>
-                    <% var latestPost = site.posts.sort('-date').first(); %><div class="latest-chapter-buttom content"><%= latestPost.title %></div>
-                </div>
-            </div>
+            <a class="author-home" href="<%= theme.book.author_home %>">
+                <span>查看作者主页</span>
+                <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>right-arrow"></i>
+            </a>
         </div>
     </div>
-    <div class="buttom-main"></div>
+    <div class="col-content"></div>
 </div>
