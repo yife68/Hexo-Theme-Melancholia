@@ -1,0 +1,183 @@
+.col-content
+  padding: 0 16.25rem
+  display: flex
+
+  @media screen and (max-width: 767px)
+    padding: 0
+    display: inline-block
+    max-width: -webkit-fill-available
+
+  @media screen and (min-width: 768px) and (max-width: 1668px)
+    padding: 0 4.25rem
+
+  .content
+    padding: 20px
+    background: var(--icat-card-bg)
+    border-radius: 12px
+    border: 1px solid var(--icat-card-border)
+    margin-top: 20px
+    margin-right: 20px
+    width: 100%
+    height: min-content
+
+    @media screen and (max-width: 767px)
+      margin-right: 0
+      width: auto
+      margin-top: 8px
+      border-radius: initial
+      border: 0
+
+    .backlist-nav
+      display: flex
+      width: 100%
+      background: var(--icat-secondbg)
+      border-radius: 6px
+      border: 2px solid var(--icat-card-border)
+      padding: 12px 2px 12px 0
+
+      @media screen and (max-width: 767px)
+        padding: 12px 0 12px 0
+
+      span
+        color: var(--icat-text-highlight-color)
+        font-size: 18px
+        font-weight: 600
+        margin-left: 12px
+
+    .backlist
+      display: flex
+      align-items: center
+      flex-wrap: wrap
+
+      .backlist-list
+        width: calc(100% / 3)
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+        @media screen and (max-width: 767px)
+          width: 100%
+          border-bottom: 1px solid var(--icat-card-border)
+
+        .backlist-title
+          color: var(--icat-text-highlight-color)
+          overflow: hidden
+          -o-text-overflow: ellipsis
+          text-overflow: ellipsis
+          white-space: nowrap
+          border-bottom: 1px solid var(--icat-card-border)
+          width: 100%
+          padding: 12px
+
+          @media screen and (max-width: 767px)
+            border-bottom: 0
+
+        .backlist-time
+          color: var(--icat-secondtext)
+          display: none!important
+
+          @media screen and (max-width: 767px)
+            display: inline-block!important
+            min-width: fit-content
+
+  .sidebar
+    width: calc(28%)
+    overflow: hidden
+
+    .author-card
+      margin-top: 20px
+
+      .author
+        background-image: var(--icat-author-background)
+        background-repeat: no-repeat
+        background-attachment: inherit
+        background-size: 100%
+        border-radius: 12px
+        border: 1px solid var(--icat-card-border)
+        padding: 20px 24px
+
+        @media screen and (max-width: 768px)
+          display: none!important
+
+        .author-head
+          text-align: center
+
+          .author-img
+            overflow: hidden
+            margin: 0 auto
+            width: 100px
+            height: 100px
+            border-radius: 50%
+            border: 4px solid #f0f0f2
+
+            img
+              width: 100%
+              height: 100%
+              object-fit: cover
+            
+          .author-name
+            font-weight: 500
+            font-size: 1.57em
+            color: var(--icat-text-highlight-color)
+            margin: 12px 0 0
+
+          .author-introduce
+            color: var(--icat-fontcolor)
+            margin: 4px 0 0
+
+        .author-statistics
+          display: flex
+          width: 100%
+          text-align: center
+          justify-content: space-around
+          margin: 16px 0 4px
+
+          .headline
+            color: var(--icat-text-highlight-color)
+
+          .length-num
+            margin-top: 2px
+            font-size: 1.2em
+            color: var(--icat-fontcolor)
+
+          a
+
+            :hover
+              color: #0e83cd
+
+        .author-contact
+          display: flex
+          justify-content: space-evenly
+          align-items: center
+          margin: 16px 0 4px
+
+          .social-icon
+            padding: 8px
+            color: var(--icat-fontcolor)
+            display: inline-flex
+            border-radius: 50%
+            background: var(--icat-secondbg)
+            border: 1px solid var(--icat-card-border)
+
+            i
+              font-size: 1.2em
+
+          .author-home
+            padding: 4.5px 16px
+            color: var(--icat-fontcolor)
+            background: var(--icat-secondbg)
+            border: 1px solid var(--icat-card-border)
+            border-radius: 20px
+            display: flex
+            align-items: center
+
+            .author-home-text
+              font-size: 14px
+              margin-left: 4px
+
+            i
+              font-size: 0.9em
+              padding: 6px 4px 6px 8px
+              background: var(--icat-card-bg)
+              border-radius: 50%
+              margin-left: 6px

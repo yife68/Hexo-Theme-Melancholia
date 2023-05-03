@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="pe-main">
-            <div class="banner-top" style="background-color: <%= theme.book.cover_host_color %>; background-image: linear-gradient(45deg, <%= theme.book.cover_host_color %> 0%, <%= theme.book.cover_assistant_color %> 100%);">
+            <div class="banner-top" style="background-color: <%= theme.book.cover_host_color %>; background-image: linear-gradient(45deg, <%= theme.book.cover_host_color %> 0%, <%= theme.book.cover_assistant_color %> 100%)">
                 <div class="book-information">
                     <div class="title"><%= theme.book.title %></div>
                     <div class="book-total">
@@ -97,11 +97,63 @@
                     </div>
                 </div>
             </div>
-            <a class="author-home" href="<%= theme.book.author_home %>">
+            <a class="author-home" href="<%= theme.book.author_home %>" rel="external nofollow" target="_blank">
                 <span>查看作者主页</span>
                 <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>right-arrow"></i>
             </a>
         </div>
     </div>
-    <div class="col-content"></div>
+    <div class="col-content">
+        <div class="content">
+            <div class="backlist-nav">
+                <span>文章目录 · 共 <%= site.posts.length %> 章</span>
+            </div>
+            <div class="backlist">
+                <% posts.forEach(function(post) { %><div class="backlist-list">
+                    <div class="backlist-title"><a href="<%= post.path %>"><%= post.title %></a></div>
+                    <div class="backlist-time"><%= post.date.format('YYYY-MM-DD') %></div>
+                </div><% }); %>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="author-card">
+                <div class="author">
+                    <div class="author-head">
+                        <div class="author-img">
+                            <img src="<%= theme.book.author_img %>">
+                        </div>
+                        <div class="author-name"><%= theme.book.author %></div>
+                        <div class="author-introduce"><%= theme.book.introduce %></div>
+                    </div>
+                    <div class="author-statistics">
+                        <a href="/archives/" data-pjax-state="">
+                            <div class="headline">文章</div>
+                            <div class="length-num"><%= site.posts.length %></div>
+                        </a>
+                        <div class="author-word-count">
+                            <div class="headline">字数</div>
+                            <div class="length-num"><%= totalcount(site) %></div>
+                        </div>
+                        <div class="author-creation-days">
+                            <div class="headline">创作</div>
+                            <div class="length-num"><%= daysSinceLastPost %></div>
+                        </div>
+                    </div>
+                    <div class="author-contact">
+                        <a class="social-icon" href="http://wpa.qq.com/msgrd?v=3&amp;uin=<%= theme.book.author_contact.qq %>" rel="external nofollow" target="_blank" title="<%= theme.book.author_contact.qq %>">
+                            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>qq"></i>
+                        </a>
+                        <a class="social-icon" href="https://weibo.com/u/<%= theme.book.author_contact.weibo %>" rel="external nofollow" target="_blank" title="<%= theme.book.author_contact.weibo %>">
+                            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>weibo"></i>
+                        </a>
+                        <a class="author-home" href="<%= theme.book.author_home %>">
+                            <span class="author-home-text">了解更多</span>
+                            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>right-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bulletin-board"></div>
+            </div>
+        </div>
+    </div>
 </div>
