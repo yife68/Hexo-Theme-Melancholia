@@ -1,0 +1,211 @@
+#post-header
+  margin: 0
+  padding-top: 80px
+  height: 16rem
+  display: flex !important
+  align-items: center
+
+  .post-meta-header
+    with: 100%
+    padding: 0 18.25rem
+
+    @media screen and (max-width: 767px)
+      padding: 0 8px 0 20px
+
+    @media screen and (min-width: 768px) and (max-width: 1668px)
+      padding: 0 6.25rem
+
+    .post-meta-categories
+      display: flex !important
+      align-items: center
+      height: 32px
+
+      .categories-roll-up
+        color: var(--icat-secondtext) !important
+        padding: 0 0.5rem
+        font-size: 0.6rem
+        border-radius: 8px
+        font-weight: bold
+        height: 30px
+        line-height: 30px
+        display: flex
+        background-color: rgba(51,51,51,0.06)
+        border: 1px solid var(--icat-card-border)
+
+      .chapter-title
+        margin-left: 1rem
+        font-weight: bold
+        font-size: 0.9rem
+        color: var(--icat-secondtext) !important
+
+        &:before
+          opacity: 0.4
+          content: "#"
+    
+    .post-title
+      margin: 0.9rem 0 0.6rem 0 !important
+      color: var(--icat-fontcolor)
+      font-weight: 700
+      font-size: 2.5em
+      line-height: 1.2
+      text-align: left
+
+      @media screen and (max-width: 767px)
+        font-size: 2em
+
+    .post-meta-info
+      display: flex
+      align-items: center
+      color: var(--icat-fontcolor)
+      opacity: 0.6
+      font-weight: 400
+
+      @media screen and (max-width: 767px)
+        font-size: 0.8rem
+
+      .post-meta-date,
+      .wordcount,
+      .read-time,
+      .degree-of-heat
+        display: flex
+        align-items: center
+
+        span
+          padding-left: 6px
+      
+      .post-separator-bar
+        padding: 0 6px
+        opacity: 1
+        font-size: 26px
+
+
+.license
+  position: relative
+  line-height: 1.2
+  font-size: 1rem
+  overflow: hidden
+  display: block
+  padding: 1.25em 2.2em
+  transition: color .6s,background .6s
+  border-radius: 12px
+  border: 2px solid var(--icat-card-border)
+  margin: 1.5rem 0 0.5rem
+
+  @media screen and (max-width: 767px)
+    margin: 0
+    padding: 1.25em 1.25em
+
+  &:after
+    position: absolute
+    background: url(https://yife68.gitee.io/icat-pic/blog/cc.svg)
+    content: ' '
+    height: 200px
+    width: 200px
+    right: -44px
+    top: -44px
+    opacity: .1
+
+  .license-link
+    line-height: 16px
+    display: flex
+    align-items: center
+    margin-top: 12px
+
+    a
+      font-size: 13px
+      color: var(--icat-fontcolor)
+      font-weight: bold
+      opacity: 0.6
+
+    button
+      padding: 0px
+      outline: 0px
+      border: none
+      background: 0px 0px
+      cursor: pointer
+    
+    .license-copybtn
+      margin-left: 0.5rem
+      color: var(--icat-fontcolor)
+      opacity: 0.4
+      transition: 0.3s
+
+      &:hover
+        opacity: 1
+        transition: 0.3s
+
+      i
+        font-size: 10px
+
+  .license-title
+    padding: 0 0 0.25rem
+    color: var(--icat-lighttext)
+    font-size: 1.18rem
+    font-weight: bold
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    display: flex
+    align-items: center
+
+    a
+      background: var(--icat-secondbg)
+      color: var(--icat-fontcolor)
+      padding: 0.3rem 0.6rem
+      font-size: 0.6rem
+      border-radius: 6px
+      border: 1px solid var(--icat-card-border)
+      margin-right: 0.6rem
+      font-weight: bold
+      line-height: 1.2
+      white-space: nowrap
+      -webkit-user-select: none
+
+  .license-link
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    
+  .license-meta
+    margin-top: 1rem
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    flex-wrap: wrap
+    color: var(--icat-fontcolor)
+
+    .license-meta-title
+      font-size: .8rem
+
+    .license-meta-text
+      color: var(--icat-lighttext)
+      font-size: 1rem
+      font-weight: bold
+      margin: 0
+
+  .license-meta-item
+    margin: 0 2rem 1em 0
+
+  .license-text
+    color: var(--icat-fontcolor)
+    font-weight: bold
+    font-size: .8rem
+
+
+.post
+  padding: 0 16.25rem
+
+  @media screen and (max-width: 767px)
+      padding: 0 8px
+
+  @media screen and (min-width: 768px) and (max-width: 1668px)
+    padding: 0 4.25rem
+
+  #article
+    padding: 45px 40px
+    background: var(--icat-card-content-bg)
+    border-radius: 12px
+    border: 1px solid var(--icat-card-border)
+
+    @media screen and (max-width: 767px)
+      padding: 1rem 1rem!important

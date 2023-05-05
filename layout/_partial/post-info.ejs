@@ -1,0 +1,46 @@
+<div id="post-header">
+  <div class="post-meta-header">
+    <div class="post-meta-categories">
+      <% page.categories.each(function(cate) { %>
+      <a class="categories-roll-up" href="<%= url_for(cate.path) %>" data-pjax-state=""><%- cate.name %></a>
+      <% }) %>
+      <div class="chapter-title">
+        <span>
+          <% if(page.title.includes("：")) { %>
+            <%= page.title.split("：")[0] %>
+          <% } else { %>
+            序列
+          <% } %>
+        </span>
+      </div>
+    </div>
+    <div class="post-title">
+      <% if (page.title.indexOf('：') !== -1) { %>
+        <%= page.title.substring(page.title.indexOf('：') + 1) %>
+      <% } else { %>
+        <%= page.title %>
+      <% } %>
+    </div>
+    <div class="post-meta-info">
+      <span class="post-meta-date">
+        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>release-time"></i>
+        <span><%= full_date(page.date, 'YYYY-MM-DD') %></span>
+      </span>
+      <span class="post-separator-bar">·</span>
+      <span class="wordcount">
+        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>quantity"></i>
+        <span><%= wordcount(page.content) %></span>
+      </span>
+      <span class="post-separator-bar">·</span>
+      <span class="read-time">
+        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>time-fill"></i>
+        <span><%= min2read(page.content, {cn: 300, en: 160}) %>分钟</span>
+      </span>
+      <span class="post-separator-bar">·</span>
+      <span class="degree-of-heat">
+        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>degree-of-heat"></i>
+        <span id="busuanzi_value_page_pv"></span>
+      </span>
+    </div>
+  </div>
+</div>

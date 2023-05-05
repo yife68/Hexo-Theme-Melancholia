@@ -1,0 +1,41 @@
+<%- partial('_partial/post-info.ejs') %>
+
+<article class="post">
+  <div id="article">
+    <div id="post-content" class="markdown-body textretty">
+      <%- page.content %>
+    </div>
+    <% if (theme.post.copyright.enable){ %>
+      <div class="license">
+        <div class="license-title">
+          <% page.categories.each(function(cate) { %>
+          <a class="license-roll-up" title="该文章为原创文章，注意版权协议" href="<%= url_for(cate.path) %>" data-pjax-state=""><%- cate.name %></a>
+          <% }) %>
+          <%= page.title %>
+        </div>
+        <div class="license-link">
+          <a href="<%= page.url || page.permalink %>"><%= page.url || page.permalink %></a>
+          <button class="license-copybtn" onclick="rm.copyPageUrl()">
+            <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>copy-fill"></i>
+          </button>
+        </div>
+        <div class="license-meta">
+          <div class="license-meta-item">
+            <div class="license-meta-title">本文作者</div>
+            <div class="license-meta-text"><%= theme.book.author %></div></div>
+          <div class="license-meta-item">
+            <div class="license-meta-title">最后更新</div>
+            <div class="license-meta-text"><%= page.updated.format("YYYY-MM-DD") %></div>
+          </div>
+          <div class="license-meta-item">
+            <div class="license-meta-title">许可协议</div>
+            <div class="license-meta-text">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="nofollow noopener noreferrer" target="_blank">CC BY-NC-SA 4.0</a>
+            </div>
+          </div>
+        </div>
+        <div class="license-text">转载或引用本章时请遵守许可协议，注明出处、不得用于商业用途！</div>
+      </div>
+      <% } %>
+  </div>
+</article>

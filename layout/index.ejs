@@ -106,7 +106,7 @@
     <div class="col-content">
         <div class="content">
             <div class="backlist-nav">
-                <span>文章目录 · 共 <%= site.posts.length %> 章</span>
+                <span>文章目录</span>
             </div>
             <div class="backlist">
                 <% posts.forEach(function(post) { %><div class="backlist-list">
@@ -152,7 +152,15 @@
                         </a>
                     </div>
                 </div>
-                <div class="bulletin-board"></div>
+                <div class="bulletin-board-card">
+                    <div class="item-headline">
+                        <i class="<%= theme.icon.iconfont_family %> <%= theme.icon.iconfont %>bulletin-board"></i>
+                        <span>公告</span>
+                    </div>
+                    <div class="bulletin-board-content">
+                        <%- theme.bulletin_board %>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

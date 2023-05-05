@@ -1,0 +1,59 @@
+#footer
+  padding: 1.5rem 0
+  margin-top: 4.25rem
+  background: var(--icat-secondbg)
+  display: flex
+  overflow: hidden
+  transition: 0.3s
+  max-width: 100%
+  font-size: 0.95rem
+
+  @media screen and (max-width: 767px)
+    margin-top: 1.25rem
+    background: var(--icat-card-bg)
+
+  .footer-links
+    display: flex
+    justify-content: space-between
+    width: 100%
+    margin: 0 auto
+    flex-wrap: wrap
+    align-items: center
+    line-height: 1.5
+    padding: 0 16.25rem
+    color: var(--icat-fontcolor)
+
+    @media screen and (max-width: 767px)
+      padding: 0
+      justify-content: center
+
+    @media screen and (min-width: 768px) and (max-width: 1668px)
+      padding: 0 4.25rem
+
+    .footer-left
+      display: flex
+      flex-wrap: wrap
+      min-height: 32px
+      align-items: center
+
+      .footer-tips
+
+        @media screen and (max-width: 767px)
+          display: flex
+          flex-direction: column
+          align-items: center
+
+    .footer-right
+      display: flex
+      align-items: flex-end
+      flex-direction: column-reverse
+
+      @media screen and (max-width: 767px)
+        align-items: center
+        flex-direction: column
+
+
+.footer-link
+
+  &:hover
+    color: var(--icat-theme)

@@ -12,7 +12,7 @@
 
   .content
     padding: 20px
-    background: var(--icat-card-bg)
+    background: var(--icat-card-content-bg)
     border-radius: 12px
     border: 1px solid var(--icat-card-border)
     margin-top: 20px
@@ -26,6 +26,7 @@
       margin-top: 8px
       border-radius: initial
       border: 0
+      background: var(--icat-card-bg)
 
     .backlist-nav
       display: flex
@@ -84,8 +85,14 @@
     width: calc(28%)
     overflow: hidden
 
+    @media screen and (max-width: 767px)
+      width: 100%
+
     .author-card
       margin-top: 20px
+
+      @media screen and (max-width: 767px)
+        margin-top: 0
 
       .author
         background-image: var(--icat-author-background)
@@ -181,3 +188,44 @@
               background: var(--icat-card-bg)
               border-radius: 50%
               margin-left: 6px
+    
+    .bulletin-board-card
+      background: var(--icat-card-content-bg)
+      margin-top: 20px
+      border-radius: 12px
+      border: 1px solid var(--icat-card-border)
+      padding: 20px
+      color: var(--icat-fontcolor)
+
+      @media screen and (max-width: 767px)
+        background: var(--icat-card-bg)
+        border-radius: 0
+        border: 0
+        margin-top: 8px
+
+      .item-headline
+        margin-left: 8px
+        font-size: 1em
+        font-weight: bold
+        display: flex
+        align-items: center
+        padding-bottom: 6px
+
+        @media screen and (max-width: 767px)
+          font-size: 18px
+          padding-left: 0
+
+        i
+          min-width: 19.5px
+          font-size: 20px
+          color: #f00
+
+          @media screen and (max-width: 767px)
+            color: var(--icat-fontcolor)
+
+        span
+          padding-left: 6px
+
+      .bulletin-board-content
+        font-size: 14px
+        padding: 14px 0 12px 0
